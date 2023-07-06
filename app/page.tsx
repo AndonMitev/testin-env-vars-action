@@ -2,10 +2,12 @@
 import Image from 'next/image';
 import { useEffect } from 'react';
 import createWeb3Wallet from './walletconnect';
+import { GOOGLE_CLIENT_ID } from '@/lib/env';
 
 export default function Home() {
   useEffect(() => {
     (async () => {
+      console.log(GOOGLE_CLIENT_ID);
       createWeb3Wallet();
     })();
   }, []);
