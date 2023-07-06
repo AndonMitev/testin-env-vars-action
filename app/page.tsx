@@ -1,8 +1,14 @@
-import { WEB3_CLIENT_ID } from '@/lib/env';
+'use client';
 import Image from 'next/image';
+import { useEffect } from 'react';
+import createWeb3Wallet from './walletconnect';
 
 export default function Home() {
-  console.log(WEB3_CLIENT_ID);
+  useEffect(() => {
+    (async () => {
+      createWeb3Wallet();
+    })();
+  }, []);
 
   return (
     <main className='flex min-h-screen flex-col items-center justify-between p-24'>
